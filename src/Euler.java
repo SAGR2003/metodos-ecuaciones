@@ -1,24 +1,16 @@
-public class Euler {
-    Main main;
-    public void euler() {
-        double x0 = 2;
-        double y0 = 4;
-        double h = 0.1;
+public class Euler extends Main{
+    public void euler(double x0, double y0, double h, double xMax) {
+        double xNuevo = x0 + h;
+        double yNuevo;
 
-        double xviejo = x0;
-        double yviejo = y0;
-        double xnuevo = xviejo + h;
-        double ynuevo;
+        while (xNuevo <= xMax) {
+            xNuevo = x0 + h;
+            yNuevo = y0 + (h * this.funcion(x0, y0));
 
-        while (xnuevo <= 2.5) {
-            xnuevo = xviejo + h;
-            ynuevo = yviejo + (h * main.funcion(xviejo, yviejo));
+            System.out.println("x =" + xNuevo + ", y = " + yNuevo + " error aproximado =" + this.calculaErrorAproximado(yNuevo, y0) + "%");
 
-            System.out.println("x =" + xnuevo + ", y = " + ynuevo + " error aproximado =" + main.calculaErrorAproximado(ynuevo, yviejo) + "%");
-
-            xviejo = xnuevo;
-            yviejo = ynuevo;
-
+            x0 = xNuevo;
+            y0 = yNuevo;
         }
     }
 }

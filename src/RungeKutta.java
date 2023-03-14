@@ -1,5 +1,4 @@
-public class RungeKutta {
-    Main main = new Main();
+public class RungeKutta extends Main{
     public double y;
     public double x;
     public double h;
@@ -38,22 +37,22 @@ public class RungeKutta {
     }
 
     private double calculaK1(double xViejo, double yViejo) {
-        k1 = main.funcion(xViejo, yViejo);
+        k1 = this.funcion(xViejo, yViejo);
         return k1;
     }
 
     private double calculaK2(double xViejo, double yViejo) {
-        k2 = main.funcion((xViejo + h / 2), yViejo + k1 * h / 2);
+        k2 = this.funcion((xViejo + h / 2), yViejo + k1 * h / 2);
         return k2;
     }
 
     private double calculaK3(double xViejo, double yViejo) {
-        k3 = main.funcion(xViejo + h / 2, yViejo + k2 * h / 2);
+        k3 = this.funcion(xViejo + h / 2, yViejo + k2 * h / 2);
         return k3;
     }
 
     private double calculaK4(double xViejo, double yViejo) {
-        k4 = main.funcion(xViejo + h, yViejo + h * k3);
+        k4 = this.funcion(xViejo + h, yViejo + h * k3);
         return k4;
     }
 
