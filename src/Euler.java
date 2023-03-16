@@ -3,7 +3,7 @@ public class Euler extends Main{
         double xNuevo = x0 + h;
         double yNuevo;
 
-        while (xNuevo <= xMax) {
+        while (xNuevo < xMax) {
             xNuevo = x0 + h;
             yNuevo = y0 + (h * this.funcion(x0, y0));
 
